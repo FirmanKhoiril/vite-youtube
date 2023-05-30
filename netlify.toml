@@ -1,4 +1,12 @@
 [[redirects]]
-  from = "/*"
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+  from = "/shorts"
+  to = "/index.html"
+  status = 200
+
+  from = "/search/:id"
   to = "/index.html"
   status = 200
