@@ -2,7 +2,7 @@ import { Categories } from "../components";
 
 const Home = () => {
   return (
-    <div className="min-h-[200vh]">
+    <div className="">
       <Categories />
       Home
     </div>
