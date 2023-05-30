@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+
 const SearchTerm = () => {
-  return <div>SearchTerm</div>;
+  const { search } = useParams();
+  return <div>SearchTerm {search}</div>;
 };
 
 export default SearchTerm;
