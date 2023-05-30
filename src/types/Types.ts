@@ -17,3 +17,7 @@ export type TContextState = {
   setToogleDescription: React.Dispatch<React.SetStateAction<boolean>>;
   setSearchToogle: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+export type TCategory = {
+  name: string;
+};

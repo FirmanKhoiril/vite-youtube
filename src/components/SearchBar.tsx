@@ -1,11 +1,17 @@
 import { AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
 import { useGlobalState } from "../hooks/StateProvider";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
   const { setSearchTerm, searchTerm } = useGlobalState();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (searchTerm.length > 0) {
+      navigate(`/search/${searchTerm}`);
+    }
   };
 
   const handleEraseSearchTerm = () => setSearchTerm("");
