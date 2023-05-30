@@ -25,7 +25,7 @@ const Navbar = () => {
           <AiOutlineSearch className="text-2xl" />
         </button>
       </div>
-      {searchToogle && <SearchMobile />}
+      {!searchToogle && <SearchMobile />}
     </div>
   );
 };
