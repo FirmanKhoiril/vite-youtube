@@ -4,13 +4,13 @@ import { useState, createContext, useContext } from "react";
 export const StateContext = createContext<TContextState>({
   searchToogle: false,
   setSearchToogle: () => {},
-  sidebarToogle: false,
+
   searchTerm: "",
   cursorNext: "",
   toogleSidebar: false,
   setToogleSidebar: () => {},
   setCursorNext: () => {},
-  setSidebarToogle: () => {},
+
   toogleDescription: false,
   setToogleDescription: () => {},
   setSearchTerm: () => {},
@@ -27,7 +27,6 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
   const [cursorNext, setCursorNext] = useState("");
   const [categories, setCategories] = useState("berita terbaru 2023");
   const [searchTerm, setSearchTerm] = useState("");
-  const [sidebarToogle, setSidebarToogle] = useState<boolean>(false);
   const [toogleDescription, setToogleDescription] = useState(false);
   return (
     <StateContext.Provider
@@ -36,7 +35,6 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
         cursorNext,
         categories,
         toogleSidebar,
-        sidebarToogle,
         searchTerm,
         searchTermMobile,
         toogleDescription,
@@ -47,7 +45,6 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
         setSearchTermMobile,
         setToogleDescription,
         setSearchToogle,
-        setSidebarToogle,
       }}
     >
       {children}

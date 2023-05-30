@@ -2,12 +2,20 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./layout";
 import { Channel, Home, SearchTerm, Shorts } from "./pages";
-import { Error } from "./components";
+import { BlackScreen, Error, Sidebar } from "./components";
+import { useGlobalState } from "./hooks/StateProvider";
 
 function App() {
+  const { toogleSidebar } = useGlobalState();
   return (
-    <div className="">
+    <div>
       <Navbar />
+      {toogleSidebar && (
+        <>
+          <BlackScreen />
+          <Sidebar />
+        </>
+      )}
       <Routes>
         <Route path="/" element={<Home />}>
           <Route errorElement={<Error />} path="shorts" element={<Shorts />} />

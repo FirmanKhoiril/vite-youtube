@@ -2,7 +2,7 @@ import { SetStateAction } from "react";
 
 export type TContextState = {
   searchToogle: boolean;
-  sidebarToogle: boolean;
+
   categories: string;
   cursorNext: string;
   toogleDescription: boolean;
@@ -16,5 +16,4 @@ export type TContextState = {
   setSearchTermMobile: React.Dispatch<React.SetStateAction<string>>;
   setToogleDescription: React.Dispatch<React.SetStateAction<boolean>>;
   setSearchToogle: React.Dispatch<React.SetStateAction<boolean>>;
-  setSidebarToogle: React.Dispatch<React.SetStateAction<boolean>>;
 };

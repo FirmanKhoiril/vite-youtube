@@ -6,6 +6,9 @@ export default {
       fontSize: {
         xs: "13px",
       },
+      backgroundColor: {
+        primary: "#ec4899",
+      },
       fontFamily: {
         sans: ["Open Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
