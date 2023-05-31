@@ -21,3 +21,43 @@ export type TContextState = {
 export type TCategory = {
   name: string;
 };
+
+export type TDataYoutube = {
+  contents: [];
+  cursorNext: string;
+};
+
+export type TAvatar = {
+  url: string;
+};
+
+export type TContent = {
+  video: {
+    author: {
+      avatar: [TAvatar];
+      channelId: string;
+      title: string;
+    };
+    publishedTimeText: string;
+    title: string;
+    videoId: string;
+    stats: { views: number };
+    thumbnails: [TAvatar];
+  };
+};
+export interface IContent {
+  content: {
+    video: {
+      author: {
+        avatar: [TAvatar];
+        channelId: string;
+        title: string;
+      };
+      publishedTimeText: string;
+      title: string;
+      videoId: string;
+      stats: { views: number };
+      thumbnails: [TAvatar];
+    };
+  };
+}

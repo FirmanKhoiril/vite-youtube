@@ -5,7 +5,7 @@ import { TCategory } from "../types/Types";
 const Categories = () => {
   const { categories, setCategories } = useGlobalState();
   return (
-    <div className="flex items-center gap-3 px-4 py-3 overflow-x-auto w-full">
+    <div className="flex items-center gap-3 p-4 overflow-x-auto w-full">
       {categoriesData.map((category: TCategory) => (
         <button
           onClick={() => setCategories(category.name)}

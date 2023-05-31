@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./layout";
-import { Channel, Home, SearchTerm, Shorts } from "./pages";
+import { Channel, Detail, Home, SearchTerm, Shorts } from "./pages";
 import { BlackScreen, Error, Sidebar } from "./components";
 import { useGlobalState } from "./hooks/StateProvider";
 
@@ -20,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route errorElement={<Error />} path="/shorts" element={<Shorts />} />
         <Route errorElement={<Error />} path="/search/:search" element={<SearchTerm />} />
+        <Route errorElement={<Error />} path="/video-detail/:id" element={<Detail />} />
         <Route errorElement={<Error />} path="/channel/:id" element={<Channel />} />
       </Routes>
       <Footer />
