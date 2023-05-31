@@ -1,8 +1,10 @@
 import { Categories } from "../components";
+import { HeroSection } from "../layout";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
+      <HeroSection />
       <Categories />
       Home
     </div>

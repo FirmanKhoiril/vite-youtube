@@ -17,13 +17,13 @@ const SearchBar = () => {
   const handleEraseSearchTerm = () => setSearchTerm("");
   return (
     <form onSubmit={handleSubmit} className="items-center flex">
-      <input type="text" className="p-3 rounded-l-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/60" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      <input type="text" className="py-[10px] px-3 rounded-l-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/60" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       {searchTerm.length > 0 && (
-        <button onClick={handleEraseSearchTerm} type="button" name="ClearButton" aria-label="buttonClear" className="p-3   absolute hover:text-pink-500 right-[335px] cursor-pointer">
+        <button onClick={handleEraseSearchTerm} type="button" name="ClearButton" aria-label="buttonClear" className="p-3   absolute hover:text-pink-500 right-[300px] cursor-pointer">
           <AiOutlineClose className="text-xl" />
         </button>
       )}
-      <button type="submit" className="p-3 hover:bg-white/20 peer-focus:bg-white bg-white/60 transition_all" aria-label="submitSearch" name="searchButton">
+      <button type="submit" className="py-[10px] px-3 hover:bg-white/20 peer-focus:bg-white bg-white/60 transition_all" aria-label="submitSearch" name="searchButton">
         <AiOutlineSearch className="text-2xl" />
       </button>
     </form>

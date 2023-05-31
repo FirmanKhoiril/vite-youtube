@@ -14,7 +14,7 @@ const Categories = () => {
           type="button"
           className={` ${
             category.name === categories ? "bg-primary text-white border-transparent" : "bg-white border-pink-500"
-          } min-w-[134px] transition_all border border-pink-500 hover:border-transparent rounded-sm hover:bg-primary py-2 px-4 font-poppins`}
+          } min-w-[134px] transition_all border border-pink-500 hover:border-transparent rounded-sm hover:bg-primary p-2 font-poppins`}
           key={category.name}
         >
           {category.name}
