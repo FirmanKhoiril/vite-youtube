@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        xs: "13px",
+        xs: "12px",
       },
       backgroundColor: {
         primary: "#ec4899",

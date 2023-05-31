@@ -17,7 +17,7 @@ const DymanicMeta = () => (
       <link rel="notImportant" href="https://pinktube.netlify.app" />
       <meta name="PinkTube" />
       <link rel="canonical" href="https://pinktube.netlify.app" />
-      <meta property="og:title" content="This is Youtube Clone but get Better :)" />
+      <meta name="description" content="This is Pinktube similiar to Youtube but get Better  :)" />
     </Helmet>
   </HelmetProvider>
 );

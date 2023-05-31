@@ -29,7 +29,7 @@ const Home = () => {
         <Error />
       ) : (
         isSuccess && (
-          <div className="flex mt-10 flex-wrap items-center justify-center gap-3">
+          <div className="flex mt-10 flex-wrap items-center justify-center gap-4">
             {data.contents.map((content: TContent, idx: number) => (
               <Card content={content} key={idx} />
             ))}
