@@ -45,6 +45,65 @@ export type TContent = {
     thumbnails: [TAvatar];
   };
 };
+
+export type TBadges = {
+  text: string;
+  type: string;
+};
+
+export interface ITags {
+  tag: string;
+}
+
+export type TDetail = {
+  author: {
+    avatar: [TAvatar];
+    channelId: string;
+    title: string;
+    badges: [TBadges];
+
+    stats: { subscribersText: string };
+  };
+  category: string;
+  description: string;
+  keywords: [];
+  lengthSeconds: number;
+  stats: {
+    comments: number;
+    likes: number;
+    views: number;
+  };
+  title: string;
+  videoId: string;
+  thumbnails: [TAvatar];
+  publishedDate: string;
+};
+
+export interface IDetail {
+  content: {
+    author: {
+      avatar: [TAvatar];
+      channelId: string;
+      title: string;
+      badges: [TBadges];
+
+      stats: { subscribersText: string };
+    };
+    category: string;
+    description: string;
+    keywords: [];
+    lengthSeconds: number;
+    stats: {
+      comments: number;
+      likes: number;
+      views: number;
+    };
+    title: string;
+    videoId: string;
+    thumbnails: [TAvatar];
+    publishedDate: string;
+  };
+}
 export interface IContent {
   content: {
     video: {

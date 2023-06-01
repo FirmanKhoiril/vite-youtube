@@ -1,10 +1,9 @@
 import Youtube from "../images/youtube.svg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const HeroSection = () => {
   return (
-    <div className="min-h-[70vh] my-10 gap-20 md:gap-2 flex md:flex-row flex-col items-center justify-around">
-      <LazyLoadImage loading="lazy" src={Youtube} width={380} height={380} alt="HeroBackgroundImage" />
+    <div className="min-h-[70vh] my-10 px-2 gap-20 md:gap-2 flex md:flex-row flex-col items-center justify-around">
+      <img src={Youtube} width={380} height={380} alt="HeroBackgroundImage" />
       <div className="flex gap-2 flex-col">
         <h1 className=" text-4xl font-inter md:text-[49px]">
           Welcome to <span className=" hover:text-pink-500 transition_all leading-[70px]">PinkTube</span>.
