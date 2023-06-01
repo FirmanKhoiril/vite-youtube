@@ -9,8 +9,10 @@ import moment from "moment";
 import { AiOutlineLike, AiOutlineEye, AiOutlineComment } from "react-icons/ai";
 import millify from "millify";
 import Tags from "./Tags";
+import { useGlobalState } from "../hooks/StateProvider";
 
 const DetailData = ({ content }: IDetail) => {
+  const { toogleDescription, setToogleDescription } = useGlobalState();
   return (
     <div className="w-full min-h-screen lg:flex-row flex-col my-4 px-2 flex lg:justify-around">
       <div className="box">
@@ -46,11 +48,28 @@ const DetailData = ({ content }: IDetail) => {
               <span className="border-l pl-2 peer-hover:border-slate-800 border-slate-400"> {millify(content.stats.comments)}</span>
             </span>
           </div>
+          <div className={`flex relative flex-wrap gap-2 overflow-hidden py-2 ${toogleDescription ? "h-[110px]" : "h-auto"}`}>
+            <button
+              name="toogleDescription"
+              onClick={() => setToogleDescription((prev: boolean) => !prev)}
+              aria-label="toogleDescription"
+              type="button"
+              className="absolute top-0 z-10 bg-black/10 hover:bg-black/20 rounded-full right-2 px-2 py-1"
+            >
+              ...more
+            </button>
+            <div className="flex mb-10 flex-wrap gap-2">
+              {content.keywords.map((tag: string) => (
+                <Tags tag={tag} />
+              ))}
+            </div>
+            <p className="font-poppins">{content.description}</p>
+          </div>
           <div className="">
-            {/* Description and Tags */}
-            {content.keywords.map((tag: string) => (
-              <Tags tag={tag} />
-            ))}
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur repellendus officiis autem nobis aliquid! Est dolore, magnam amet repudiandae vero accusantium unde quos adipisci odio expedita pariatur quasi, iure natus
+            aspernatur nam et nihil dignissimos ipsam. Neque amet assumenda error nulla deleniti, saepe consequatur quasi cupiditate qui numquam, natus dignissimos itaque. Repudiandae praesentium repellat debitis alias eius minima. Ipsa
+            fugit adipisci mollitia qui consequatur quo praesentium sequi soluta illum laboriosam sint, veniam perferendis dicta asperiores beatae minima alias magnam veritatis dolorem cupiditate vitae eius necessitatibus. Modi recusandae
+            molestiae rem corrupti, ducimus voluptatem, tempora quia, fugit deserunt laudantium amet itaque a!
           </div>
         </div>
       </div>

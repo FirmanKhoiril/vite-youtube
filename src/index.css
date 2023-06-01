@@ -21,3 +21,7 @@ body {
 .react-player {
   @apply w-full lg:w-[900px] h-[300px] sm:h-[450px] md:h-[400px] lg:h-[500px] xl:h-[600px] xl:w-[1080px] !important;
 }
+
+.gradient {
+  @apply bg-gradient-to-r from-pink-500 via-red-300 ml-3 to-pink-400  hover:text-pink-500;
+}

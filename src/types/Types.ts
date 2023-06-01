@@ -55,6 +55,10 @@ export interface ITags {
   tag: string;
 }
 
+export interface IId {
+  id: string;
+}
+
 export type TDetail = {
   author: {
     avatar: [TAvatar];

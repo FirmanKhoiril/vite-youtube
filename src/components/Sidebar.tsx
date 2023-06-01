@@ -6,7 +6,7 @@ import { dummyLinks } from "../types/DummyData";
 const Sidebar = () => {
   const { setToogleSidebar } = useGlobalState();
   return (
-    <motion.div whileInView={{ x: [-300, 0] }} transition={{ duration: 0.6 }} className="absolute z-20 w-[300px] px-2 py-3 top-0 border-r border-slate-800 min-h-screen bg-white">
+    <motion.div whileInView={{ x: [-300, 0] }} transition={{ duration: 0.6 }} className="fixed z-20 w-[300px] px-2 py-3 top-0 border-r border-slate-800 min-h-screen bg-white">
       <div className="flex items-center mt-10 gap-3">
         <button type="button" onClick={() => setToogleSidebar((prev: boolean) => !prev)} className="p-2 ml-4 bg-black/20 rounded-full hover:bg-black/40 transition_all" name="buttonCloseSidebar" aria-label="CloseSidebar">
           <AiOutlineClose className="text-xl" />
@@ -29,7 +29,7 @@ const Sidebar = () => {
       <div className="absolute bottom-10">
         <h1 className=" font-mono">
           @Copyright By <br />
-          <span className=" bg-clip-text text-lg text-transparent bg-gradient-to-r from-pink-500 via-red-300 ml-3 to-pink-400 hover:font-bold hover:text-pink-500 "> Firman Khoiril Rohmatullah</span>
+          <span className=" bg-clip-text text-lg text-transparent gradient hover:font-bold  "> Firman Khoiril Rohmatullah</span>
         </h1>
       </div>
     </motion.div>
