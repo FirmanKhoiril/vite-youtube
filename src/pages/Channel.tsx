@@ -5,7 +5,7 @@ import { TChannel, TLinks } from "../types/Types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { MdOutlineVerified } from "react-icons/md";
-import { ChannelPlaylist, ChannelVideos, Error, Loading } from "../components";
+import { ChannelVideos, Error, Loading } from "../components";
 
 const Channel = () => {
   const { id } = useParams();
@@ -61,8 +61,7 @@ const Channel = () => {
             </div>
             <p className="px-2 lg:px-10 font-poppins mb-10">{data?.description}</p>
             <div className="flex items-center flex-col gap-10  justify-center">
-              <ChannelVideos id={data?.channelId} />
-              <ChannelPlaylist id={data?.channelId} />
+              <ChannelVideos id={data?.channelId} title={data?.title} />
             </div>
           </>
         )

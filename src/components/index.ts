@@ -9,5 +9,4 @@ export { default as Categories } from "./Categories";
 export { default as DetailData } from "./DetailData";
 export { default as VideoRelated } from "./VideoRelated";
 export { default as Comments } from "./Comments";
-export { default as ChannelPlaylist } from "./channel/ChannelPlaylist";
 export { default as ChannelVideos } from "./channel/ChannelVideos";

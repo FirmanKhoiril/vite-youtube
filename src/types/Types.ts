@@ -65,6 +65,10 @@ export type TCommentsDetail = {
     votes: number;
   };
 };
+export type TId = {
+  title: string;
+  id: string;
+};
 export type TComments = {
   comments: [];
   cursorNext: string;
