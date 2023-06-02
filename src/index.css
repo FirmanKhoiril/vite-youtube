@@ -6,6 +6,32 @@ body {
   @apply font-unique relative bg-white;
 }
 
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #ec4899;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-moz-scrollbar-thumb:hover {
+  background: #ec4899;
+}
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #ec4899;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #fb7185;
+}
 .transition_all {
   @apply transition duration-200;
 }
