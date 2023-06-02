@@ -3,7 +3,7 @@ import { TfiShortcode } from "react-icons/tfi";
 
 export const dummyLinks = [
   { name: "Home", to: "/", icon: <AiOutlineHome /> },
-  { name: "Shorts", to: "/short", icon: <TfiShortcode /> },
+  { name: "Shorts", to: "/shorts", icon: <TfiShortcode /> },
 ];
 
 export const categoriesData = [
