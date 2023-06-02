@@ -29,7 +29,10 @@ const Sidebar = () => {
       <div className="absolute bottom-10">
         <h1 className=" font-mono">
           @Copyright By <br />
-          <span className=" bg-clip-text text-lg text-transparent gradient hover:font-bold  "> Firman Khoiril Rohmatullah</span>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=62085290502392&text=Hi Firman :)" className=" bg-clip-text text-lg text-transparent gradient hover:font-bold  ">
+            {" "}
+            Firman Khoiril Rohmatullah
+          </a>
         </h1>
       </div>
     </motion.div>
