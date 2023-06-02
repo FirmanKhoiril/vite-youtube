@@ -5,7 +5,7 @@ import { Card, Error, Loading } from ".";
 
 const VideoRelated = ({ id }: IId) => {
   const getRelatedVideo = async (pageParam: string): Promise<TDataYoutube> => {
-    const res = await FetchYoutube(`video/related-contents/?id=${id}&gl=id&cursor=${pageParam}`);
+    const res = await FetchYoutube(`video/related-contents/?id=${id}&hl=id&cursor=${pageParam}`);
     return res;
   };
 

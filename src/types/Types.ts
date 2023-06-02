@@ -1,4 +1,4 @@
-import { SetStateAction } from "react";
+import React, { SetStateAction } from "react";
 
 export type TContextState = {
   searchToogle: boolean;
@@ -8,16 +8,40 @@ export type TContextState = {
   toogleDescription: boolean;
   toogleSidebar: boolean;
   searchTermMobile: string;
+  toogleComments: boolean;
   searchTerm: string;
   setCursorNext: React.Dispatch<SetStateAction<string>>;
   setToogleSidebar: React.Dispatch<SetStateAction<boolean>>;
   setCategories: React.Dispatch<SetStateAction<string>>;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   setSearchTermMobile: React.Dispatch<React.SetStateAction<string>>;
+  setToogleComments: React.Dispatch<React.SetStateAction<boolean>>;
   setToogleDescription: React.Dispatch<React.SetStateAction<boolean>>;
   setSearchToogle: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+export type TCommentsDetail = {
+  author: {
+    avatar: [TAvatar];
+    channelId: string;
+    title: string;
+  };
+  pinned: {
+    status: boolean;
+    text: string;
+  };
+  creatorHeart: boolean;
+  content: string;
+  publishedTimeText: string;
+  stats: {
+    replies: number;
+    votes: number;
+  };
+};
+export type TComments = {
+  comments: [];
+  cursorNext: string;
+};
 export type TCategory = {
   name: string;
 };

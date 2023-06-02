@@ -17,6 +17,8 @@ export const StateContext = createContext<TContextState>({
   setSearchTermMobile: () => {},
   setCategories: () => {},
   categories: "",
+  setToogleComments: () => {},
+  toogleComments: false,
   searchTermMobile: "",
 });
 
@@ -27,11 +29,13 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
   const [cursorNext, setCursorNext] = useState("");
   const [categories, setCategories] = useState("berita terbaru 2023");
   const [searchTerm, setSearchTerm] = useState("");
+  const [toogleComments, setToogleComments] = useState(false);
   const [toogleDescription, setToogleDescription] = useState(false);
   return (
     <StateContext.Provider
       value={{
         searchToogle,
+        toogleComments,
         cursorNext,
         categories,
         toogleSidebar,
@@ -40,6 +44,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
         toogleDescription,
         setSearchTerm,
         setCategories,
+        setToogleComments,
         setToogleSidebar,
         setCursorNext,
         setSearchTermMobile,

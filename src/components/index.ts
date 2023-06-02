@@ -8,3 +8,4 @@ export { default as BlackScreen } from "./BlackScreen";
 export { default as Categories } from "./Categories";
 export { default as DetailData } from "./DetailData";
 export { default as VideoRelated } from "./VideoRelated";
+export { default as Comments } from "./Comments";

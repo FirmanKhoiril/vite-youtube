@@ -20,7 +20,7 @@ const Sidebar = () => {
       </div>
       <div className="flex flex-col items-center gap-4 mt-16 ">
         {dummyLinks.map((link) => (
-          <Link key={link.name} className="flex gap-2 text-xl font-poppins items-center w-full bg-primary hover:bg-white border border-transparent py-2 px-4 text-white hover:text-black transition_all hover:border-pink-500" to={link.to}>
+          <Link key={link.name} className="flex gap-2 text-xl font-poppins items-center w-full  py-2 px-4 button_hover" to={link.to}>
             <span>{link.icon}</span>
             <span>{link.name}</span>
           </Link>

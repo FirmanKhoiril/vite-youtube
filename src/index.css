@@ -18,6 +18,10 @@ body {
   @apply w-full lg:w-[900px] xl:w-[1080px];
 }
 
+.button_hover {
+  @apply bg-primary text-white hover:bg-white border border-transparent hover:border-pink-500 transition_all hover:text-pink-500;
+}
+
 .react-player {
   @apply w-full lg:w-[900px] h-[300px] sm:h-[450px] md:h-[400px] lg:h-[500px] xl:h-[600px] xl:w-[1080px] !important;
 }
