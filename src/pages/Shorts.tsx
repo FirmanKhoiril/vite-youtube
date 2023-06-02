@@ -1,6 +1,5 @@
 import { FetchYoutube } from "../api/fetchYoutube";
-import { Card, Categories, Error, Loading } from "../components";
-import { HeroSection } from "../layout";
+import { Card, Error, Loading } from "../components";
 import { useInfiniteQuery } from "react-query";
 import { TContent, TDataYoutube } from "../types/Types";
 
@@ -22,8 +21,6 @@ const Shorts = () => {
 
   return (
     <div>
-      <HeroSection />
-      <Categories />
       {isFetching && isLoading ? (
         <Loading />
       ) : isError ? (
