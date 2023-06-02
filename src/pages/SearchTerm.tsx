@@ -41,8 +41,8 @@ const SearchTerm = () => {
               )}
             </div>
             {hasNextPage && (
-              <button type="button" onClick={() => fetchNextPage()} name="buttonNext" aria-label="buttonNext" className="gradient hover:text-white px-3 py-2 mb-10 pt-2 rounded-md">
-                Next Page
+              <button type="button" onClick={() => fetchNextPage()} name="buttonNext" aria-label="buttonNext" className="gradient hover:text-white px-3 py-2 mb-10 pt-2 rounded-md tracking-wide">
+                Load More...
               </button>
             )}
           </div>

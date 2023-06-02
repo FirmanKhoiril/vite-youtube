@@ -19,7 +19,34 @@ export type TContextState = {
   setToogleDescription: React.Dispatch<React.SetStateAction<boolean>>;
   setSearchToogle: React.Dispatch<React.SetStateAction<boolean>>;
 };
+export type TLinks = {
+  icon: string;
+  targetUrl: string;
+  title: string;
+};
 
+export type TChannel = {
+  avatar: [TAvatar];
+  banner: {
+    desktop: [TAvatar];
+    mobile: [TAvatar];
+  };
+  channelId: string;
+  country: string;
+  description: string;
+  badges: [TBadges];
+  hasBusinessEmail: boolean;
+  joinedDateText: string;
+  keywords: [];
+  links: [TLinks];
+  stats: {
+    subscribersText: string;
+    videosText: string;
+    views: number;
+  };
+  title: string;
+  username: string;
+};
 export type TCommentsDetail = {
   author: {
     avatar: [TAvatar];

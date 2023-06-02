@@ -58,7 +58,7 @@ const Comments = ({ id }: IId) => {
                   fetchNextPage();
                 }}
               >
-                Next Comments
+                Load More Comments
               </button>
             )}
           </div>

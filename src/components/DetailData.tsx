@@ -27,7 +27,7 @@ const DetailData = ({ content }: IDetail) => {
               <div className="flex items-center gap-2">
                 <h2 className="font-play flex items-center gap-1">
                   {content.author.title}
-                  {content.author.badges[0].text === "Terverifikasi" && <MdOutlineVerified className=" text-[17px] text-blue-500" />}
+                  {content?.author?.badges[0]?.text === "Terverifikasi" && <MdOutlineVerified className=" text-[17px] text-blue-500" />}
                 </h2>
                 <p className="text-sm">{moment(content.publishedDate).fromNow()}</p>
               </div>

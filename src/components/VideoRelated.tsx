@@ -39,7 +39,7 @@ const VideoRelated = ({ id }: IId) => {
                   fetchNextPage();
                 }}
               >
-                Next Card
+                Load More
               </button>
             )}
           </div>

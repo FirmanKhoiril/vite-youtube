@@ -26,7 +26,7 @@ const Detail = () => {
         <Error />
       ) : (
         isSuccess && (
-          <div className="">
+          <div>
             <DetailData content={data} />
           </div>
         )
