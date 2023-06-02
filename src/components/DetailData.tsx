@@ -83,9 +83,7 @@ const DetailData = ({ content }: IDetail) => {
           )}
         </div>
       </div>
-      <div className="w-[400px]">
-        <VideoRelated id={content.videoId} />
-      </div>
+      <VideoRelated id={content.videoId} />
     </div>
   );
 };

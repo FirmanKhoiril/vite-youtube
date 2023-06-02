@@ -11,6 +11,7 @@ const SearchMobile = () => {
     e.preventDefault();
     if (searchTermMobile.length > 0) {
       navigate(`/search/${searchTermMobile}`);
+      setSearchTermMobile("");
       setSearchToogle((prev: boolean) => !prev);
     }
   };

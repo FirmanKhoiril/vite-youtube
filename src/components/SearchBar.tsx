@@ -11,6 +11,7 @@ const SearchBar = () => {
 
     if (searchTerm.length > 0) {
       navigate(`/search/${searchTerm}`);
+      setSearchTerm("");
     }
   };
 
