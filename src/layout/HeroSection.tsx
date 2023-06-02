@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Youtube from "../images/youtube.svg";
 
 const HeroSection = () => {
@@ -9,7 +10,9 @@ const HeroSection = () => {
           Welcome to <span className=" hover:text-pink-500 transition_all leading-[70px]">PinkTube</span>.
         </h1>
         <p className="text-lg font-play tracking-wide">Discover and watch millions of videos</p>
-        <button className="py-2 w-36 text-white px-4 hover:bg-white bg-primary border hover:border-pink-500 rounded-sm hover:text-black font-poppins border-transparent transition_all">Explore Now</button>
+        <Link to={`search/populer`} className="py-2 w-36 text-white px-4 hover:bg-white bg-primary border hover:border-pink-500 rounded-sm hover:text-black font-poppins border-transparent transition_all">
+          Explore Now
+        </Link>
       </div>
     </div>
   );

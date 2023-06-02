@@ -34,8 +34,8 @@ const SearchTerm = () => {
             <div className="flex flex-wrap gap-4 items-center justify-center">
               {data?.pages.map((page) =>
                 page.contents.map((content: TContent, idx: number) => (
-                  <div className="flex">
-                    <Card key={idx} content={content} />
+                  <div key={idx} className="flex">
+                    <Card content={content} />
                   </div>
                 ))
               )}

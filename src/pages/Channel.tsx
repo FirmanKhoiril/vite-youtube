@@ -29,8 +29,8 @@ const Channel = () => {
       ) : (
         isSuccess && (
           <>
-            <LazyLoadImage alt={data?.username} effect="blur" loading="lazy" src={data?.banner.desktop[0].url} className="w-full h-[300px]" height={300} />
-            <div className="px-2 flex justify-around gap-2 my-10 space-y-10 items-center flex-wrap">
+            <LazyLoadImage alt={data?.username} effect="blur" loading="lazy" src={data?.banner.desktop[0].url} className="w-full h-40 lg:h-[300px]" />
+            <div className="px-2 flex justify-around gap-2 md:my-10 space-y-4 items-center flex-wrap">
               <div className="my-2 flex items-center gap-4 ">
                 <LazyLoadImage alt={data?.username} src={data?.avatar[0].url} width={100} height={100} className=" rounded-full " />
                 <div className="flex flex-col">
@@ -38,7 +38,7 @@ const Channel = () => {
                     <h2 className="font-play text-4xl">{data?.title}</h2>
                     {data?.badges[0]?.text === "Terverifikasi" && <MdOutlineVerified className=" text-[20px] text-blue-500" />}
                   </div>
-                  <div className="flex items-center text-slate-700 gap-2">
+                  <div className="flex items-center flex-wrap text-slate-700 gap-2">
                     <h2>{data?.username}</h2>
                     <p>{data?.stats.subscribersText}</p>
                     <p>{data?.stats.videosText}</p>
@@ -49,11 +49,11 @@ const Channel = () => {
                 <div>
                   <p className=" text-right">{data?.joinedDateText}</p>
                 </div>
-                <div className="flex items-start gap-4">
+                <div className="flex items-start mb-4 gap-4 flex-wrap">
                   {data?.links.map((link: TLinks, idx: number) => (
                     <a rel="noopener" key={idx} className="flex items-center gap-1" target="_blank" href={link.targetUrl}>
                       <LazyLoadImage alt={link.title} height={20} width={20} src={link.icon} />
-                      <h2>{link.title}</h2>
+                      <h2 className="font-poppins">{link.title}</h2>
                     </a>
                   ))}
                 </div>
