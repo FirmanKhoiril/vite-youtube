@@ -7,10 +7,12 @@ export type TContextState = {
   cursorNext: string;
   toogleDescription: boolean;
   toogleSidebar: boolean;
+  filterVideoByLatest: string;
   searchTermMobile: string;
   toogleComments: boolean;
   searchTerm: string;
   setCursorNext: React.Dispatch<SetStateAction<string>>;
+  setFilterVideoByLatest: React.Dispatch<SetStateAction<string>>;
   setToogleSidebar: React.Dispatch<SetStateAction<boolean>>;
   setCategories: React.Dispatch<SetStateAction<string>>;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
@@ -99,6 +101,18 @@ export type TContent = {
     stats: { views: number };
     thumbnails: [TAvatar];
   };
+  short: {
+    author: {
+      avatar: [TAvatar];
+      channelId: string;
+      title: string;
+    };
+    publishedTimeText: string;
+    title: string;
+    videoId: string;
+    stats: { viewsText: number };
+    thumbnails: [TAvatar];
+  };
 };
 
 export type TBadges = {
@@ -175,6 +189,18 @@ export interface IContent {
       title: string;
       videoId: string;
       stats: { views: number };
+      thumbnails: [TAvatar];
+    };
+    short: {
+      author: {
+        avatar: [TAvatar];
+        channelId: string;
+        title: string;
+      };
+      publishedTimeText: string;
+      title: string;
+      videoId: string;
+      stats: { viewsText: number };
       thumbnails: [TAvatar];
     };
   };

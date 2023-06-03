@@ -4,14 +4,14 @@ import { useState, createContext, useContext } from "react";
 export const StateContext = createContext<TContextState>({
   searchToogle: false,
   setSearchToogle: () => {},
-
   searchTerm: "",
   cursorNext: "",
   toogleSidebar: false,
   setToogleSidebar: () => {},
   setCursorNext: () => {},
-
+  setFilterVideoByLatest: () => {},
   toogleDescription: false,
+  filterVideoByLatest: "",
   setToogleDescription: () => {},
   setSearchTerm: () => {},
   setSearchTermMobile: () => {},
@@ -25,6 +25,7 @@ export const StateContext = createContext<TContextState>({
 export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [searchToogle, setSearchToogle] = useState<boolean>(true);
   const [searchTermMobile, setSearchTermMobile] = useState("");
+  const [filterVideoByLatest, setFilterVideoByLatest] = useState("videos_latest");
   const [toogleSidebar, setToogleSidebar] = useState(false);
   const [cursorNext, setCursorNext] = useState("");
   const [categories, setCategories] = useState("berita terbaru 2023");
@@ -35,6 +36,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
     <StateContext.Provider
       value={{
         searchToogle,
+        filterVideoByLatest,
         toogleComments,
         cursorNext,
         categories,
@@ -46,6 +48,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
         setCategories,
         setToogleComments,
         setToogleSidebar,
+        setFilterVideoByLatest,
         setCursorNext,
         setSearchTermMobile,
         setToogleDescription,

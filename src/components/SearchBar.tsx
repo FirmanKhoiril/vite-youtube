@@ -18,7 +18,13 @@ const SearchBar = () => {
   const handleEraseSearchTerm = () => setSearchTerm("");
   return (
     <form onSubmit={handleSubmit} className="items-center flex">
-      <input type="text" className="py-[10px] px-3 rounded-l-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/60" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      <input
+        type="text"
+        className="py-[10px] px-3 rounded-l-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/60"
+        placeholder="Search Something"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       {searchTerm.length > 0 && (
         <button onClick={handleEraseSearchTerm} type="button" name="ClearButton" aria-label="buttonClear" className="p-3   absolute hover:text-pink-500 right-[330px] cursor-pointer">
           <AiOutlineClose className="text-xl" />

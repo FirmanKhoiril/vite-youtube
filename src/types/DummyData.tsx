@@ -6,6 +6,12 @@ export const dummyLinks = [
   { name: "Shorts", to: "/shorts", icon: <TfiShortcode /> },
 ];
 
+export const options = [
+  { value: "videos_latest", name: "video latest" },
+  { value: "streams_latest", name: "streams latest" },
+  { value: "shorts_latest", name: "shorts latest" },
+  { value: "live_now", name: "livenow" },
+];
 export const categoriesData = [
   { name: "All" },
   { name: "Mixes" },
