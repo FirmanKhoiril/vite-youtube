@@ -12,7 +12,7 @@ const SearchTerm = () => {
     return res;
   };
 
-  const { data, isFetching, isError, fetchNextPage, hasNextPage, isLoading, isSuccess } = useInfiniteQuery(["searchTerm", search], ({ pageParam = "" }) => getDataYoutube(pageParam), {
+  const { data, isFetching, isError, fetchNextPage, hasNextPage, isLoading, isSuccess, isFetchingNextPage } = useInfiniteQuery(["searchTerm", search], ({ pageParam = "" }) => getDataYoutube(pageParam), {
     refetchOnWindowFocus: false,
     refetchInterval: 60 * (60 * 1000),
     staleTime: 60 * (60 * 1000),
@@ -40,6 +40,7 @@ const SearchTerm = () => {
                 ))
               )}
             </div>
+            {isFetchingNextPage && <Loading />}
             {hasNextPage && (
               <button type="button" onClick={() => fetchNextPage()} name="buttonNext" aria-label="buttonNext" className="gradient hover:text-white px-3 py-2 mb-10 pt-2 rounded-md tracking-wide">
                 Load More...

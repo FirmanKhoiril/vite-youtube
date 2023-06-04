@@ -9,7 +9,7 @@ const VideoRelated = ({ id }: IId) => {
     return res;
   };
 
-  const { data, isFetching, isError, fetchNextPage, hasNextPage, isLoading, isSuccess } = useInfiniteQuery(["RelatedVideo", id], ({ pageParam = "" }) => getRelatedVideo(pageParam), {
+  const { data, isFetching, isError, fetchNextPage, hasNextPage, isLoading, isSuccess, isFetchingNextPage } = useInfiniteQuery(["RelatedVideo", id], ({ pageParam = "" }) => getRelatedVideo(pageParam), {
     refetchOnWindowFocus: false,
     refetchInterval: 60 * (60 * 1000),
     staleTime: 60 * (60 * 1000),
@@ -29,6 +29,7 @@ const VideoRelated = ({ id }: IId) => {
           <div className="flex mt-10 flex-col flex-wrap items-center justify-center gap-4">
             <h1 className="text-4xl text-center font-inter tracking-wider mb-2">You might also Like</h1>
             {data.pages.map((page) => page.contents.map((content: TContent, idx: number) => <Card content={content} key={idx} />))}
+            {isFetchingNextPage && <Loading />}
             {hasNextPage && (
               <button
                 type="button"

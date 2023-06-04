@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-unique relative bg-white;
+  @apply font-unique relative;
 }
 
 body {
@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .button_hover {
-  @apply bg-primary text-white hover:bg-white border border-transparent hover:border-pink-500 transition_all hover:text-pink-500;
+  @apply bg-primary dark:hover:bg-zinc-900 text-white hover:bg-white border border-transparent hover:border-pink-500 transition_all hover:text-pink-500;
 }
 
 .react-player {
@@ -53,5 +53,5 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .gradient {
-  @apply bg-gradient-to-r from-pink-500 via-red-300 ml-3 to-pink-400  hover:text-pink-500;
+  @apply bg-gradient-to-r  from-pink-500 via-red-300 ml-3 to-pink-400  hover:text-pink-500;
 }

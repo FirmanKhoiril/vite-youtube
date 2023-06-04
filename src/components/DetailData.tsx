@@ -1,4 +1,4 @@
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import { IDetail } from "../types/Types";
 import { Comments, VideoRelated } from ".";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -16,7 +16,7 @@ const DetailData = ({ content }: IDetail) => {
   return (
     <div className="w-full min-h-screen lg:flex-row flex-col my-4 px-2 flex lg:justify-around">
       <div className="box">
-        <ReactPlayer url={`https://www.youtube.com/watch?v=${content.videoId}`} className="react-player" />
+        <ReactPlayer controls url={`https://www.youtube.com/watch?v=${content.videoId}`} className="react-player" />
         <div className="w-full my-2">
           <h1 className="font-poppins text-lg">{content.title}</h1>
           <Link to={`/channel/${content.author.channelId}`} className="w-full my-2 gap-2 flex items-center">
@@ -54,7 +54,7 @@ const DetailData = ({ content }: IDetail) => {
               onClick={() => setToogleDescription((prev: boolean) => !prev)}
               aria-label="toogleDescription"
               type="button"
-              className="absolute top-0 z-10 bg-black/10 hover:bg-black/20 rounded-full right-2 px-2 py-1"
+              className="absolute top-0 bg-white hover:bg-black/20 border rounded-full right-2 px-2 py-1"
             >
               ...more
             </button>
@@ -68,7 +68,7 @@ const DetailData = ({ content }: IDetail) => {
           {toogleComments ? (
             <div className="flex flex-col gap-2 my-5">
               <div className="flex items-center">
-                <Comments id={content.videoId} />
+                <Comments id={content.videoId} titleImage={content.author.title} image={content.author.avatar[0].url} />
               </div>
               <div>
                 <button name="toogleComment" onClick={() => setToogleComments((prev: boolean) => !prev)} aria-label="buttonComments" type="button" className="px-3 py-2 font-poppins button_hover">

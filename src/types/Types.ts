@@ -9,6 +9,7 @@ export type TContextState = {
   toogleSidebar: boolean;
   filterVideoByLatest: string;
   searchTermMobile: string;
+  dark: boolean;
   toogleComments: boolean;
   searchTerm: string;
   setCursorNext: React.Dispatch<SetStateAction<string>>;
@@ -20,6 +21,7 @@ export type TContextState = {
   setToogleComments: React.Dispatch<React.SetStateAction<boolean>>;
   setToogleDescription: React.Dispatch<React.SetStateAction<boolean>>;
   setSearchToogle: React.Dispatch<React.SetStateAction<boolean>>;
+  setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
 export type TLinks = {
   icon: string;
@@ -87,6 +89,12 @@ export type TDataYoutube = {
 export type TAvatar = {
   url: string;
 };
+
+export interface ICommentImage {
+  id: string;
+  image: string;
+  titleImage: string;
+}
 
 export type TContent = {
   video: {

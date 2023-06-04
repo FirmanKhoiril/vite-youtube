@@ -1,8 +1,8 @@
 const Footer = () => (
-  <div className="min-h-[200px] border-t border-t-pink-500/20 flex items-center justify-around px-2 md:flex-row flex-col mt-10 w-full bg-white">
+  <div className="min-h-[200px] border-t border-t-pink-500/20 flex items-center justify-around px-2 md:flex-row flex-col mt-10 w-full bg-white dark:bg-zinc-800">
     <h1 className=" font-inter">
       @Copyright By{" "}
-      <a target="_blank" className="font-poppins hover:text-slate-700" href="https://www.instagram.com/firman.khoiril/">
+      <a target="_blank" className="font-poppins dark:hover:text-slate-400 hover:text-slate-700" href="https://www.instagram.com/firman.khoiril/">
         @firman.khoiril &nbsp;
       </a>
       & Created with ❤️

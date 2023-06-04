@@ -6,24 +6,26 @@ import { BlackScreen, Error, Sidebar } from "./components";
 import { useGlobalState } from "./hooks/StateProvider";
 
 function App() {
-  const { toogleSidebar } = useGlobalState();
+  const { toogleSidebar, dark } = useGlobalState();
   return (
-    <div>
-      <Navbar />
-      {toogleSidebar && (
-        <>
-          <BlackScreen />
-          <Sidebar />
-        </>
-      )}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route errorElement={<Error />} path="/shorts" element={<Shorts />} />
-        <Route errorElement={<Error />} path="/search/:search" element={<SearchTerm />} />
-        <Route errorElement={<Error />} path="/video-detail/:id" element={<Detail />} />
-        <Route errorElement={<Error />} path="/channel/:id" element={<Channel />} />
-      </Routes>
-      <Footer />
+    <div className={dark ? "dark" : "light"}>
+      <div className="dark:bg-zinc-900 bg-white dark:text-white">
+        <Navbar />
+        {toogleSidebar && (
+          <>
+            <BlackScreen />
+            <Sidebar />
+          </>
+        )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route errorElement={<Error />} path="/shorts" element={<Shorts />} />
+          <Route errorElement={<Error />} path="/search/:search" element={<SearchTerm />} />
+          <Route errorElement={<Error />} path="/video-detail/:id" element={<Detail />} />
+          <Route errorElement={<Error />} path="/channel/:id" element={<Channel />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }

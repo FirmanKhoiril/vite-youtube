@@ -38,7 +38,7 @@ const Channel = () => {
                     <h2 className="font-play text-4xl">{data?.title}</h2>
                     {data?.badges[0]?.text === "Terverifikasi" && <MdOutlineVerified className=" text-[20px] text-blue-500" />}
                   </div>
-                  <div className="flex items-center flex-wrap text-slate-700 gap-2">
+                  <div className="flex items-center flex-wrap dark:text-slate-400 text-slate-700 gap-2">
                     <h2>{data?.username}</h2>
                     <p>{data?.stats.subscribersText}</p>
                     <p>{data?.stats.videosText}</p>

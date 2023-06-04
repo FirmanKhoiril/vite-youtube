@@ -19,11 +19,17 @@ const SearchMobile = () => {
   const handleEraseSearchTerm = () => setSearchTermMobile("");
 
   return (
-    <form onSubmit={handleSubmit} className="absolute z-20 w-full pr-5 py-1 items-center  bg-primary justify-between flex-grow md:hidden  flex">
+    <form onSubmit={handleSubmit} className="absolute z-20 w-full pr-5 py-1 items-center dark:bg-zinc-900  bg-primary justify-between flex-grow md:hidden  flex">
       <button type="button" onClick={() => setSearchToogle((prev: boolean) => !prev)} className="p-2 hover:bg-white/20 transition_all" aria-label="buttonBack" name="backButton">
         <BiArrowBack className="text-2xl" />
       </button>
-      <input type="text" className="p-3 mx-4 rounded-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins" placeholder="Search Something" value={searchTermMobile} onChange={(e) => setSearchTermMobile(e.target.value)} />
+      <input
+        type="text"
+        className="p-3 mx-4 rounded-md dark:text-black bg-white min-w-[150px] flex-grow relative outline-none font-poppins"
+        placeholder="Search Something"
+        value={searchTermMobile}
+        onChange={(e) => setSearchTermMobile(e.target.value)}
+      />
       {searchTermMobile.length > 0 && (
         <button onClick={handleEraseSearchTerm} type="button" name="ClearButton" aria-label="buttonClear" className="p-3 absolute hover:text-pink-500 right-16 cursor-pointer">
           <AiOutlineClose className="text-2xl" />

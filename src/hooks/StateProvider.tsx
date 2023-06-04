@@ -20,11 +20,14 @@ export const StateContext = createContext<TContextState>({
   setToogleComments: () => {},
   toogleComments: false,
   searchTermMobile: "",
+  setDark: () => {},
+  dark: false,
 });
 
 export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [searchToogle, setSearchToogle] = useState<boolean>(true);
   const [searchTermMobile, setSearchTermMobile] = useState("");
+  const [dark, setDark] = useState(false);
   const [filterVideoByLatest, setFilterVideoByLatest] = useState("videos_latest");
   const [toogleSidebar, setToogleSidebar] = useState(false);
   const [cursorNext, setCursorNext] = useState("");
@@ -36,6 +39,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
     <StateContext.Provider
       value={{
         searchToogle,
+        dark,
         filterVideoByLatest,
         toogleComments,
         cursorNext,
@@ -47,6 +51,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
         setSearchTerm,
         setCategories,
         setToogleComments,
+        setDark,
         setToogleSidebar,
         setFilterVideoByLatest,
         setCursorNext,

@@ -13,7 +13,7 @@ const Home = () => {
     return res;
   };
 
-  const { data, isSuccess, isError, isLoading, isFetching, hasNextPage, fetchNextPage } = useInfiniteQuery(["dataYoutube", categories], ({ pageParam = "" }) => getDataYoutube(pageParam), {
+  const { data, isSuccess, isError, isLoading, isFetching, hasNextPage, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(["dataYoutube", categories], ({ pageParam = "" }) => getDataYoutube(pageParam), {
     refetchInterval: 60 * (60 * 1000),
     getNextPageParam: (lastpage) => {
       return lastpage.cursorNext;
@@ -34,6 +34,7 @@ const Home = () => {
         isSuccess && (
           <div className="flex items-center justify-center flex-col gap-10">
             <div className="flex mt-10 flex-wrap items-center justify-center gap-4">{data?.pages.map((page) => page.contents.map((content: TContent, idx: number) => <Card content={content} key={idx} />))}</div>
+            {isFetchingNextPage && <Loading />}
             {hasNextPage && (
               <button type="button" onClick={() => fetchNextPage()} className="gradient rounded-md hover:text-white py-2 px-4">
                 Load More

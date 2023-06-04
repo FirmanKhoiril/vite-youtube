@@ -13,8 +13,8 @@ const Categories = () => {
           aria-label={category.name + "Button"}
           type="button"
           className={` ${
-            category.name === categories ? "bg-primary text-white border-transparent" : "bg-white border-pink-500"
-          } min-w-[134px] transition_all border border-pink-500 hover:border-transparent rounded-sm hover:bg-primary p-2 font-poppins`}
+            category.name === categories ? "bg-primary text-white border-transparent" : "bg-white dark:bg-zinc-900 border-pink-500"
+          } min-w-[134px] transition_all border border-pink-500 hover:border-transparent rounded-sm hover:bg-primary dark:hover:bg-pink-500 p-2 font-poppins`}
           key={category.name}
         >
           {category.name}

@@ -20,7 +20,7 @@ const SearchBar = () => {
     <form onSubmit={handleSubmit} className="items-center flex">
       <input
         type="text"
-        className="py-[10px] px-3 rounded-l-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/60"
+        className="py-[10px] px-3 rounded-l-md bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/80"
         placeholder="Search Something"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
