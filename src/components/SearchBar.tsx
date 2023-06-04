@@ -20,7 +20,7 @@ const SearchBar = () => {
     <form onSubmit={handleSubmit} className="items-center flex">
       <input
         type="text"
-        className="py-[10px] px-3 rounded-l-md dark:text-black bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer focus:bg-white/80"
+        className="py-[10px] px-3 rounded-l-md dark:text-black bg-white min-w-[150px] flex-grow relative outline-none font-poppins peer dark:placeholder:text-black/60 focus:bg-white/80"
         placeholder="Search Something"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
@@ -30,7 +30,7 @@ const SearchBar = () => {
           <AiOutlineClose className="text-xl" />
         </button>
       )}
-      <button type="submit" className="py-[10px] px-3 hover:bg-white/20 peer-focus:bg-white bg-white/60 transition_all" aria-label="submitSearch" name="searchButton">
+      <button type="submit" className="py-[10px] px-3 hover:bg-white/20 dark:focus:bg-white/40 text-black peer-focus:bg-white bg-white/60 dark:hover:bg-zinc-200  transition_all" aria-label="submitSearch" name="searchButton">
         <AiOutlineSearch className="text-2xl" />
       </button>
     </form>
