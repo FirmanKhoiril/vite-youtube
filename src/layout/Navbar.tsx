@@ -15,7 +15,7 @@ const Navbar = () => {
         <Link to="/">
           <h1 className="text-3xl">
             Pink
-            <span className="text-white">Tube</span>
+            <span className="text-white dark:text-pink-500">Tube</span>
           </h1>
         </Link>
       </div>
