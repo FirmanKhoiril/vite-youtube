@@ -54,7 +54,7 @@ const DetailData = ({ content }: IDetail) => {
               onClick={() => setToogleDescription((prev: boolean) => !prev)}
               aria-label="toogleDescription"
               type="button"
-              className="absolute top-0 bg-white hover:bg-black/20 border rounded-full right-2 px-2 py-1"
+              className="absolute top-0 bg-white hover:bg-black/20 dark:hover:bg-zinc-900/80 dark:bg-zinc-900 border rounded-full right-2 px-2 py-1"
             >
               ...more
             </button>

@@ -43,10 +43,10 @@ const Comments = ({ id, image, titleImage }: ICommentImage) => {
                     <div className="flex flex-col gap-1">
                       <div className="flex gap-2 items-center">
                         <h2 className="font-play ">{comment.author.title}</h2>
-                        <p className="text-sm text-slate-600">{comment.publishedTimeText}</p>
+                        <p className="text-sm  text-slate-600 dark:text-slate-300">{comment.publishedTimeText}</p>
                       </div>
                       <p className="text-sm font-poppins tracking-wide">{comment.content}</p>
-                      <div className="flex text-slate-600 items-center gap-1">
+                      <div className="flex text-slate-600 dark:text-slate-300 items-center gap-1">
                         <p className="flex items-center gap-1 py-1 px-2 ">
                           <AiOutlineLike className="text-lg" />
                           {millify(comment.stats.votes) || "Don't have Like"}
