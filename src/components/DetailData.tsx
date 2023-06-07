@@ -31,7 +31,7 @@ const DetailData = ({ content }: IDetail) => {
                 </h2>
                 <p className="text-sm">{moment(content.publishedDate).fromNow()}</p>
               </div>
-              <p className="font-poppins text-xs text-slate-600">{content.author.stats.subscribersText}</p>
+              <p className="font-poppins text-xs dark:text-slate-400 text-slate-600">{content.author.stats.subscribersText}</p>
             </div>
           </Link>
           <div className="my-5 flex overflow-x-auto items-center gap-2">
@@ -48,17 +48,17 @@ const DetailData = ({ content }: IDetail) => {
               <span className="border-l pl-2 peer-hover:border-slate-800 border-slate-400"> {millify(content.stats.comments)}</span>
             </span>
           </div>
-          <div className={`flex relative flex-wrap gap-2 overflow-hidden py-2 ${toogleDescription ? "h-[110px]" : "h-auto"}`}>
+          <div className={`flex relative flex-wrap gap-2 overflow-hidden py-2 ${!toogleDescription ? "h-[40px]" : "h-auto"}`}>
             <button
               name="toogleDescription"
               onClick={() => setToogleDescription((prev: boolean) => !prev)}
               aria-label="toogleDescription"
               type="button"
-              className="absolute top-0 bg-white hover:bg-black/20 dark:hover:bg-zinc-900/80 dark:bg-zinc-900 border rounded-full right-2 px-2 py-1"
+              className="absolute top-0 bg-white hover:bg-black/20 dark:hover:bg-zinc-900/80 dark:bg-black/80 dark:border-white/20 border rounded-full right-2 px-2 py-1"
             >
               ...more
             </button>
-            <div className="flex mb-10 flex-wrap gap-2">
+            <div className="flex mb-10 flex-wrap gap-1">
               {content.keywords.map((tag: string) => (
                 <Tags tag={tag} />
               ))}

@@ -19,9 +19,8 @@ const CardShorts = ({ content }: IContent) => {
         src={content?.short?.thumbnails[0]?.url || undefinedImage}
       />
       <h4 className=" text-[13px] font-poppins">{content?.short?.title}</h4>
-      <p className={`absolute bottom-5 text-white  flex text-xs px-2 items-center justify-between w-full`}>
+      <p className={`absolute bottom-5 text-white  flex text-xs px-2 items-start w-full`}>
         <span>{millify(content?.short?.stats?.viewsText) || "Don't have "} Views</span>
-        <span>{content?.short?.publishedTimeText || "There is no data"}</span>
       </p>
     </Link>
   );
