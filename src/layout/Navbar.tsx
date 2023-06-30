@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CiSun, CiDark } from "react-icons/ci";
 
 const Navbar = () => {
-  const { setToogleSidebar, searchToogle, setSearchToogle, dark, setDark } = useGlobalState();
+  const { setToogleSidebar, setSearchToogle, dark, setDark } = useGlobalState();
   return (
     <div className="p-[10px] md:p-3 w-full bg-primary dark:bg-zinc-900 z-10 sticky top-0 flex items-center justify-between md:justify-around overflow-hidden">
       <div className="flex items-center gap-3">
@@ -35,7 +35,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      {!searchToogle && <SearchMobile />}
+      <SearchMobile />
     </div>
   );
 };

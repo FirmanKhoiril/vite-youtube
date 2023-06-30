@@ -2,21 +2,17 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./layout";
 import { Channel, Detail, Home, SearchTerm, Shorts } from "./pages";
-import { BlackScreen, Error, Sidebar } from "./components";
+import { Error, Sidebar } from "./components";
 import { useGlobalState } from "./hooks/StateProvider";
 
 function App() {
-  const { toogleSidebar, dark } = useGlobalState();
+  const { dark } = useGlobalState();
   return (
     <div className={dark ? "dark" : "light"}>
       <div className="dark:bg-zinc-900 bg-white dark:text-white">
         <Navbar />
-        {toogleSidebar && (
-          <>
-            <BlackScreen />
-            <Sidebar />
-          </>
-        )}
+        <Sidebar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route errorElement={<Error />} path="/shorts" element={<Shorts />} />

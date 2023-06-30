@@ -16,7 +16,7 @@ const DetailData = ({ content }: IDetail) => {
   return (
     <div className="w-full min-h-screen lg:flex-row flex-col my-4 px-2 flex lg:justify-around">
       <div className="box">
-        <ReactPlayer controls url={`https://www.youtube.com/watch?v=${content.videoId}`} className="react-player" />
+        <ReactPlayer controls playing url={`https://www.youtube.com/watch?v=${content.videoId}`} className="react-player" />
         <div className="w-full my-2">
           <h1 className="font-poppins text-lg">{content.title}</h1>
           <Link to={`/channel/${content.author.channelId}`} className="w-full my-2 gap-2 flex items-center">
@@ -70,14 +70,13 @@ const DetailData = ({ content }: IDetail) => {
               <div className="flex items-center">
                 <Comments id={content.videoId} titleImage={content.author.title} image={content.author.avatar[0].url} />
               </div>
-              <div>
-                <button name="toogleComment" onClick={() => setToogleComments((prev: boolean) => !prev)} aria-label="buttonComments" type="button" className="px-3 py-2 font-poppins button_hover">
-                  Hide Comments
-                </button>
-              </div>
+
+              <button name="toogleComment" onClick={() => setToogleComments((prev: boolean) => !prev)} aria-label="buttonComments" type="button" className="px-3 py-2 w-full rounded-full font-poppins button_hover">
+                Hide Comments
+              </button>
             </div>
           ) : (
-            <button name="toogleComment" onClick={() => setToogleComments((prev: boolean) => !prev)} aria-label="buttonComments" type="button" className="px-3 py-2 my-2 font-poppins button_hover">
+            <button name="toogleComment" onClick={() => setToogleComments((prev: boolean) => !prev)} aria-label="buttonComments" type="button" className="px-3 py-2 w-full rounded-full my-2 font-poppins button_hover">
               Show Comments
             </button>
           )}
