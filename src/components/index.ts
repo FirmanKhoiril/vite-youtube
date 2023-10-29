@@ -11,3 +11,4 @@ export { default as VideoRelated } from "./VideoRelated";
 export { default as Comments } from "./Comments";
 export { default as ChannelVideos } from "./channel/ChannelVideos";
 export { default as CardShorts } from "./channel/CardShorts";
+export { default as ChannelThumbnail } from "./channel/ChannelThumbnail";

@@ -2,17 +2,19 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./layout";
 import { Channel, Detail, Home, SearchTerm, Shorts } from "./pages";
-import { Error, Sidebar } from "./components";
+import { Error, SearchMobile, Sidebar } from "./components";
 import { useGlobalState } from "./hooks/StateProvider";
+import { Toaster } from "sonner";
 
 function App() {
   const { dark } = useGlobalState();
   return (
     <div className={dark ? "dark" : "light"}>
-      <div className="dark:bg-zinc-900 bg-white dark:text-white">
+      <div className="dark:bg-zinc-900 min-h-screen bg-white dark:text-white">
         <Navbar />
         <Sidebar />
-
+        <SearchMobile />
+        <Toaster position="top-center" richColors theme={dark ? "dark" : "light"} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route errorElement={<Error />} path="/shorts" element={<Shorts />} />

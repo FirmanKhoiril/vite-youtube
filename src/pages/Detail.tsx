@@ -1,38 +1,15 @@
 import { useParams } from "react-router-dom";
 import { DetailData, Error, Loading } from "../components";
-import { useQuery } from "react-query";
-import { FetchYoutube } from "../api/fetchYoutube";
-import { TDetail } from "../types/Types";
+import useGetDetailVideo from "../hooks/useGetDetailVideo";
 
 const Detail = () => {
   const { id } = useParams();
-  const getDataYoutube = async (): Promise<TDetail> => {
-    const res = await FetchYoutube(`video/details/?id=${id}&hl=id`);
+  const { isError, isFetching, isLoading, data, isSuccess } = useGetDetailVideo(id);
 
-    return res;
-  };
+  if (isLoading && isFetching) return <Loading />;
 
-  const { data, isSuccess, isError, isLoading, isFetching } = useQuery(["dataYoutube", id], getDataYoutube, {
-    refetchInterval: 60 * (60 * 1000),
-    staleTime: 60 * (60 * 1000),
-    refetchOnWindowFocus: false,
-  });
-
-  return (
-    <div>
-      {isFetching && isLoading ? (
-        <Loading />
-      ) : isError ? (
-        <Error />
-      ) : (
-        isSuccess && (
-          <div>
-            <DetailData content={data} />
-          </div>
-        )
-      )}
-    </div>
-  );
+  if (isError) return <Error />;
+  return <>{isSuccess && <DetailData content={data} />}</>;
 };
 
 export default Detail;

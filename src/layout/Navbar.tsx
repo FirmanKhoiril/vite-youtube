@@ -1,5 +1,5 @@
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import { SearchBar, SearchMobile } from "../components";
+import { SearchBar } from "../components";
 import { useGlobalState } from "../hooks/StateProvider";
 import { Link } from "react-router-dom";
 import { CiSun, CiDark } from "react-icons/ci";
@@ -7,15 +7,15 @@ import { CiSun, CiDark } from "react-icons/ci";
 const Navbar = () => {
   const { setToogleSidebar, setSearchToogle, dark, setDark } = useGlobalState();
   return (
-    <div className="p-[10px] md:p-3 w-full bg-primary dark:bg-zinc-900 z-10 sticky top-0 flex items-center justify-between md:justify-around overflow-hidden">
+    <div className="p-[10px] md:p-3 w-full bg-white drop-shadow-sm dark:border-white/10 border-b border-black/10 dark:bg-zinc-900 z-10 sticky top-0 flex items-center justify-between md:justify-around overflow-hidden">
       <div className="flex items-center gap-3">
         <button type="button" aria-label="MenuSidebar" name="menuSidebar" className="button_icon rounded-md" onClick={() => setToogleSidebar((prev: boolean) => !prev)}>
           <AiOutlineMenu className="text-xl" />
         </button>
         <Link to="/">
-          <h1 className="text-3xl">
+          <h1 className=" font-bold text-2xl md:text-3xl">
             Pink
-            <span className="text-white dark:text-pink-500">Tube</span>
+            <span className="text-pink-500">Tube</span>
           </h1>
         </Link>
       </div>
@@ -35,7 +35,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      <SearchMobile />
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { useInfiniteQuery } from "react-query";
 import { TContent, TDataYoutube, TId } from "../../types/Types";
 import { FetchYoutube } from "../../api/fetchYoutube";
 import { Card, CardShorts, Error, Loading } from "..";
-import { IoOptionsOutline } from "react-icons/io5";
 import { options } from "../../types/DummyData";
 import { useGlobalState } from "../../hooks/StateProvider";
 
@@ -22,37 +21,42 @@ const ChannelVideos = ({ id, title }: TId) => {
     staleTime: 60 * (60 * 1000),
   });
 
+  if (isError) return <Error />;
+
+  if (isLoading && isFetching) return <Loading />;
+
   return (
     <div>
-      <div className="flex items-center gap-1 peer button_hover w-[150px] justify-center m-auto  py-2 ">
-        <IoOptionsOutline className="text-xl" />
-        <select onChange={(e) => setFilterVideoByLatest(e.currentTarget.value)} aria-label="filter" name="filterSelect" className=" bg-transparent">
+      <div className="flex flex-col items-center  gap-3">
+        <p className="font-bold text-lg">Select Video by</p>
+        <div className="flex items-center gap-2 justify-center md:text-lg text-sm">
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <button
+              key={option.value}
+              className={` ${option.value === filterVideoByLatest ? "bg-primary hover:opacity-80" : "dark:bg-white/10 bg-black/10"} hover:bg-primary py-2 px-3 `}
+              onClick={() => setFilterVideoByLatest(option.value)}
+              type="button"
+              aria-label="buttonOptions"
+              name="buttonOptions"
+            >
               {option.name}
-            </option>
+            </button>
           ))}
-        </select>
+        </div>
       </div>
-      {isFetching && isLoading ? (
-        <Loading />
-      ) : isError ? (
-        <Error />
-      ) : (
-        isSuccess && (
-          <div className="flex items-center justify-center flex-col gap-10">
-            <h1 className="text-center text-xl md:text-3xl font-inter mt-10">Latest Videos by {title}</h1>
-            <div className="flex mt-10 flex-wrap items-center justify-center gap-4 ">
-              {data?.pages.map((page) => page.contents.map((content: TContent, idx: number) => <div key={idx}>{filterVideoByLatest === "shorts_latest" ? <CardShorts content={content} /> : <Card content={content} />}</div>))}
-            </div>
-            {isFetchingNextPage && <Loading />}
-            {hasNextPage && (
-              <button type="button" onClick={() => fetchNextPage()} className="gradient rounded-md hover:text-white py-2 px-4">
-                Load More
-              </button>
-            )}
+      {isSuccess && (
+        <div className="flex items-center justify-center flex-col gap-10">
+          <h1 className="text-center text-xl md:text-3xl font-inter mt-10"> Last Video {title}</h1>
+          <div className="flex flex-wrap items-center justify-center gap-4 ">
+            {data?.pages.map((page) => page.contents.map((content: TContent, idx: number) => <div key={idx}>{filterVideoByLatest === "shorts_latest" ? <CardShorts content={content} /> : <Card content={content} />}</div>))}
           </div>
-        )
+          {isFetchingNextPage && <Loading />}
+          {hasNextPage && (
+            <button type="button" onClick={() => fetchNextPage()} className="gradient rounded-md hover:text-white py-2 px-4">
+              Load More
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

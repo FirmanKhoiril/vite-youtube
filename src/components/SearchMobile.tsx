@@ -25,28 +25,28 @@ const SearchMobile = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className={`absolute z-20 w-full pr-5 py-1 items-center dark:bg-zinc-900  bg-primary justify-between flex-grow md:hidden  flex transition_all ${searchToogle ? "translate-y-[0%]" : " translate-y-[-100%]"}`}
+        className={`fixed top-0 z-30 w-full px-2 py-1 items-center dark:bg-zinc-900 bg-white justify-between flex-grow md:hidden flex transition_all ${!searchToogle ? "translate-y-[0%]" : " translate-y-[-120%]"}`}
       >
-        <button type="button" onClick={() => setSearchToogle((prev: boolean) => !prev)} className="p-2 hover:bg-white/20 transition_all" aria-label="buttonBack" name="backButton">
-          <BiArrowBack className="text-2xl" />
+        <button type="button" onClick={() => setSearchToogle((prev: boolean) => !prev)} className="p-2 hover:bg-white/20 rounded-full transition_all" aria-label="buttonBack" name="backButton">
+          <BiArrowBack size={24} />
         </button>
         <input
           type="text"
-          className="p-3 mx-4 rounded-md placeholder:text-black/80 dark:text-black bg-white/40 min-w-[150px] flex-grow relative outline-none font-poppins"
+          className="p-3 mx-4 rounded-full placeholder:text-black/80 dark:text-white bg-black/20 dark:bg-white/10 dark:placeholder:text-white/80 min-w-[150px] flex-grow relative outline-none font-poppins"
           placeholder="Search Something"
           value={searchTermMobile}
           onChange={(e) => setSearchTermMobile(e.target.value)}
         />
         {searchTermMobile.length > 0 && (
-          <button onClick={handleEraseSearchTerm} type="button" name="ClearButton" aria-label="buttonClear" className="p-3 absolute hover:text-pink-500 right-16 cursor-pointer">
-            <AiOutlineClose className="text-2xl" />
+          <button onClick={handleEraseSearchTerm} type="button" name="ClearButton" aria-label="buttonClear" className="p-3 absolute hover:text-pink-500 right-[72px] cursor-pointer">
+            <AiOutlineClose size={24} />
           </button>
         )}
         <button type="submit" className="p-2 hover:bg-white/20 rounded-full transition_all" aria-label="submitSearch" name="searchButton">
-          <AiOutlineSearch className="text-2xl" />
+          <AiOutlineSearch size={24} />
         </button>
       </form>
-      {searchToogle && <BlackScreen onClick={handleCloseSearch} />}
+      {!searchToogle && <BlackScreen onClick={handleCloseSearch} />}
     </>
   );
 };

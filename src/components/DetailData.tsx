@@ -17,7 +17,7 @@ const DetailData = ({ content }: IDetail) => {
     <div className="w-full min-h-screen lg:flex-row flex-col my-4 px-2 flex lg:justify-around">
       <div className="box">
         <ReactPlayer controls playing url={`https://www.youtube.com/watch?v=${content.videoId}`} className="react-player" />
-        <div className="w-full my-2">
+        <div className="w-full my-4">
           <h1 className="font-poppins text-lg">{content.title}</h1>
           <Link to={`/channel/${content.author.channelId}`} className="w-full my-2 gap-2 flex items-center">
             <div className=" w-10 h-full ">
@@ -48,15 +48,15 @@ const DetailData = ({ content }: IDetail) => {
               <span className="border-l pl-2 peer-hover:border-slate-800 border-slate-400"> {millify(content.stats.comments)}</span>
             </span>
           </div>
-          <div className={`flex relative flex-wrap gap-2 overflow-hidden py-2 ${!toogleDescription ? "h-[40px]" : "h-auto"}`}>
+          <div className={`flex relative flex-wrap gap-2 overflow-hidden py-2 ${toogleDescription ? "h-auto" : "h-[40px]"}`}>
             <button
               name="toogleDescription"
               onClick={() => setToogleDescription((prev: boolean) => !prev)}
               aria-label="toogleDescription"
               type="button"
-              className="absolute top-0 bg-white hover:bg-black/20 dark:hover:bg-zinc-900/80 dark:bg-black/80 dark:border-white/20 border rounded-full right-2 px-2 py-1"
+              className="absolute top-0 bg-white hover:bg-black/20 dark:hover:bg-zinc-600/60 dark:bg-white/20 dark:border-white/20 border rounded-full right-2 px-2 py-1"
             >
-              ...more
+              {toogleDescription ? "...hide desc" : "...show desc"}
             </button>
             <div className="flex mb-10 flex-wrap gap-1">
               {content.keywords.map((tag: string) => (

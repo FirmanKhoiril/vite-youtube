@@ -10,8 +10,8 @@ const Sidebar = () => {
   const handleCloseSidebar = () => setToogleSidebar((prev: boolean) => !prev);
   return (
     <>
-      <div className={`fixed ${toogleSidebar ? "translate-x-[0%]" : " translate-x-[-100%]"} z-20 w-[300px] transition_all px-2 py-3 top-0 border-r border-slate-800 min-h-screen dark:bg-zinc-900 bg-white`}>
-        <div className="flex items-center mt-10 gap-3">
+      <div className={`fixed ${toogleSidebar ? "translate-x-[0%]" : " translate-x-[-120%]"} z-20 w-[300px] transition_all px-2 py-3 top-0 border-r border-slate-800 min-h-screen dark:bg-zinc-900 bg-white`}>
+        <div className="flex items-center mt-4 gap-3">
           <button
             type="button"
             onClick={() => setToogleSidebar((prev: boolean) => !prev)}
@@ -28,18 +28,18 @@ const Sidebar = () => {
             </h1>
           </Link>
         </div>
-        <div className="flex flex-col items-center gap-4 mt-16 ">
+        <div className="flex flex-col px-3 items-center gap-4 mt-10 ">
           {dummyLinks.map((link) => (
             <Link key={link.name} className="flex gap-2 text-xl font-poppins items-center w-full  py-2 px-4 button_hover" to={link.to}>
-              <span>{link.icon}</span>
-              <span>{link.name}</span>
+              <span className=" text-[16px] sm:text-base">{link.icon}</span>
+              <span className="text-[16px] sm:text-base">{link.name}</span>
             </Link>
           ))}
         </div>
         <div className="absolute bottom-10">
           <h1 className=" font-mono">
             @Copyright By <br />
-            <a target="_blank" href="https://api.whatsapp.com/send?phone=62085290502392&text=Hi Firman :)" className=" bg-clip-text text-lg text-transparent gradient hover:font-bold  ">
+            <a target="_blank" href="https://api.whatsapp.com/send?phone=62085290502392&text=Hi Firman :)" className="hover:text-pink-500">
               Firman Khoiril Rohmatullah
             </a>
           </h1>

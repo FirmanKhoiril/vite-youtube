@@ -6,38 +6,12 @@ body {
   @apply font-unique relative;
 }
 
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #fff #ec4899;
-}
-
-body::-webkit-scrollbar {
-  @apply w-[10px];
-}
-
-/* Track */
-body::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-body::-moz-scrollbar-thumb:hover {
-  background: #ec4899;
-}
-/* Handle */
-body::-webkit-scrollbar-thumb {
-  background: #ec4899;
-}
-
-/* Handle on hover */
-body::-webkit-scrollbar-thumb:hover {
-  background: #fb7185;
-}
 .transition_all {
   @apply transition duration-200;
 }
 
 .button_icon {
-  @apply p-2 bg-white/20 dark:bg-white/5 dark:hover:bg-white/20  hover:bg-white/40 transition_all;
+  @apply p-2 bg-black/10 dark:bg-white/5 dark:hover:bg-white/20  hover:bg-white/40 transition_all;
 }
 
 .box {
@@ -45,7 +19,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .button_hover {
-  @apply bg-primary dark:hover:bg-zinc-900 text-white hover:bg-white border border-transparent hover:border-pink-500 transition_all hover:text-pink-500;
+  @apply bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/10 hover:border-transparent dark:border-white/10;
 }
 
 .react-player {
