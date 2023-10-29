@@ -14,7 +14,7 @@ export default {
         sans: ["Open Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        unique: ["Andika", "sans-serif"],
+        unique: ["Roboto", "sans-serif"],
         play: ["Play", "sans-serif"],
       },
     },
